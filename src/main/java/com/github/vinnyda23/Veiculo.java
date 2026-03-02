@@ -8,56 +8,59 @@ public class Veiculo {
     private String cor;
     private double valor;
 
-    public String getCategoria() {
-        return categoria;
+    public Veiculo(String categoria, String modelo, String marca, String ano, String cor, double valor) {
     }
 
-    public void setCategoria(String categoria) {
-        this.categoria = categoria;
-    }
+        public String getCategoria () {
+            return categoria;
+        }
 
-    public String getModelo() {
-        return modelo;
-    }
+        public void setCategoria (String categoria){
+            this.categoria = categoria;
+        }
 
-    public void setModelo(String modelo) {
-        this.modelo = modelo;
-    }
+        public String getModelo () {
+            return modelo;
+        }
 
-    public String getMarca() {
-        return marca;
-    }
+        public void setModelo (String modelo){
+            this.modelo = modelo;
+        }
 
-    public void setMarca(String marca) {
-        this.marca = marca;
-    }
+        public String getMarca () {
+            return marca;
+        }
+
+        public void setMarca (String marca){
+            this.marca = marca;
+        }
 
 
-    public String getAno() {
-        return ano;
-    }
+        public String getAno () {
+            return ano;
+        }
 
-    public void setAno(String ano) {
-        this.ano = ano;
-    }
+        public void setAno (String ano){
+            this.ano = ano;
+        }
 
-    public String getCor() {
-        return cor;
-    }
+        public String getCor () {
+            return cor;
+        }
 
-    public void setCor(String cor) {
-        this.cor = cor;
-    }
+        public void setCor (String cor){
+            this.cor = cor;
+        }
 
-    public double getValor() {
-        return valor;
-    }
+        public double getValor () {
+            return valor;
+        }
 
-    public void setValor(double valor) {
-        this.valor = valor;
-    }
+        public void setValor ( double valor){
+            this.valor = valor;
+        }
 
-    public Veiculo(String estiloVeiculos, String modelo, String marca, String pecas, String ano, String cor, double valor) {
+    public Veiculo(String estiloVeiculos, String modelo, String marca, String categoria, String ano, String cor, double valor) {
         this.categoria = estiloVeiculos;
         this.modelo = modelo;
         this.marca = marca;
