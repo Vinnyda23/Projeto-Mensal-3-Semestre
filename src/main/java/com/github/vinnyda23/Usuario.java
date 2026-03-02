@@ -56,4 +56,3 @@ public class Usuario {
         this.telefone = telefone;
     }
 }
-

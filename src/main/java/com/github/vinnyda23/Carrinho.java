@@ -1,6 +1,6 @@
 package com.github.vinnyda23;
 
-import java.util.ArrayList
+import java.util.ArrayList;
 
 public class Carrinho {
     private int numeroPedido;

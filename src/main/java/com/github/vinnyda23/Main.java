@@ -1,17 +1,43 @@
 package com.github.vinnyda23;
+import com.github.vinnyda23.Garagem;
+import com.github.vinnyda23.Veiculo;
 
-//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
-// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
+
+import java.util.Scanner;
+
 public class Main {
-    public static void main(String[] args) {
-        //TIP Press <shortcut actionId="ShowIntentionActions"/> with your caret at the highlighted text
-        // to see how IntelliJ IDEA suggests fixing it.
-        System.out.printf("Hello and welcome!");
+    public static void main(String[] args){
+        Scanner sc = new Scanner(System.in);//aqui criamos nosso Scaner , parqa quando inseriroms algo no terminal ele ler, System in significa que via ler oque o usuario digitar
+        Garagem garagem = new Garagem();
 
-        for (int i = 1; i <= 5; i++) {
-            //TIP Press <shortcut actionId="Debug"/> to start debugging your code. We have set one <icon src="AllIcons.Debugger.Db_set_breakpoint"/> breakpoint
-            // for you, but you can always add more by pressing <shortcut actionId="ToggleLineBreakpoint"/>.
-            System.out.println("i = " + i);
-        }
+        System.out.println("Cadastro de Veiculo");
+
+        System.out.println("Categoria: ");
+        String categoria = sc.nextLine();// aqui ele armazena a categoria do veiculo, como "veiculo esporivo" , direto na String categoria de Veiculo
+
+        System.out.println("Modelo: ");
+        String modelo = sc.nextLine();
+
+        System.out.println("Macar: ");
+        String marca = sc.nextLine();
+
+        System.out.println("Ano: ");
+        String ano = sc.nextLine();
+
+        System.out.println("Cor; ");
+        String cor = sc.nextLine();
+
+        System.out.println("Valor: ");
+        double valor = sc.nextDouble(); // aqui usamos "nextDouble" pois o valor pode ser numero quebrado
+
+        Veiculo v = new Veiculo(categoria, modelo, marca, ano, cor, valor);
+
+        garagem.adicionarVeiculos(v);
+
+        System.out.println("\nVeiculos Cadastrados: ");
+        garagem.listarVeiculos();
+
+        sc.close(); // aqui encerra o Scanner
+
     }
 }
