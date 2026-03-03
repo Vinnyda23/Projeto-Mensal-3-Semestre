@@ -1,5 +1,9 @@
 package com.github.vinnyda23;
 
+/**
+ * Entity class representing a vehicle in the system.
+ * Contains all vehicle attributes with proper encapsulation.
+ */
 public class Veiculo {
     private String categoria;
     private String modelo;
@@ -8,6 +12,16 @@ public class Veiculo {
     private String cor;
     private double valor;
 
+    public Veiculo(String categoria, String modelo, String marca, String ano, String cor, double valor) {
+        this.categoria = categoria;
+        this.modelo = modelo;
+        this.marca = marca;
+        this.ano = ano;
+        this.cor = cor;
+        this.valor = valor;
+    }
+
+    // Getters and Setters
     public String getCategoria() {
         return categoria;
     }
@@ -31,7 +45,6 @@ public class Veiculo {
     public void setMarca(String marca) {
         this.marca = marca;
     }
-
 
     public String getAno() {
         return ano;
@@ -57,12 +70,9 @@ public class Veiculo {
         this.valor = valor;
     }
 
-    public Veiculo(String estiloVeiculos, String modelo, String marca, String pecas, String ano, String cor, double valor) {
-        this.categoria = estiloVeiculos;
-        this.modelo = modelo;
-        this.marca = marca;
-        this.ano = ano;
-        this.cor = cor;
-        this.valor = valor;
+    @Override
+    public String toString() {
+        return String.format("Marca: %s | Modelo: %s | Categoria: %s | Ano: %s | Cor: %s | Valor: R$ %.2f",
+                marca, modelo, categoria, ano, cor, valor);
     }
 }
