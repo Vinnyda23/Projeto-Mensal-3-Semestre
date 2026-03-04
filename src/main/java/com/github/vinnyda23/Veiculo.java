@@ -32,7 +32,6 @@ public class Veiculo {
         this.marca = marca;
     }
 
-
     public String getAno() {
         return ano;
     }
@@ -57,8 +56,8 @@ public class Veiculo {
         this.valor = valor;
     }
 
-    public Veiculo(String estiloVeiculos, String modelo, String marca, String pecas, String ano, String cor, double valor) {
-        this.categoria = estiloVeiculos;
+    public Veiculo(String categoria, String modelo, String marca, String ano, String cor, double valor) {
+        this.categoria = categoria;
         this.modelo = modelo;
         this.marca = marca;
         this.ano = ano;
