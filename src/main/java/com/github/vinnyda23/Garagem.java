@@ -9,6 +9,10 @@ public class Garagem {
 
     private ArrayList<Veiculo> veiculos = new ArrayList<>();
 
+    public void veiculosCadastrados(ArrayList<Garagem> garagems) {
+        for (Veiculo v : veiculos);
+    }
+
 
     //Aqi eremos comecar a parte para adicionar veiculos, sendo cria em void para nao retornar nenhum valor
     public void adicionarVeiculos(Veiculo v) {//aqui comecaremos a se referir a veiculos como "v" nosso array, por isso veiculo v
@@ -25,7 +29,7 @@ public class Garagem {
             System.out.println("Marca: " + v.getMarca());
             System.out.println("Ano: " + v.getAno());
             System.out.println("Cor:" + v.getCor());
-            System.out.println("Valor: R$ " + v.getValor());
+            System.out.printf("Valor: R$ %.2f \n", v.getValor());
         }
     }
 
@@ -42,6 +46,15 @@ public class Garagem {
                 return v;
             }
         }
+        return null;
+
+    }public Veiculo buscarDisponivel(String modelo) {
+        for (Veiculo v : veiculos) {
+            if (v.getModelo().equalsIgnoreCase(modelo) && v.isDisponivel()) {
+                return v;
+            }
+        }
+        System.out.println("Veiculos nao disponivel");
         return null;
     }
 }

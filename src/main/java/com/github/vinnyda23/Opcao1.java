@@ -2,12 +2,11 @@ package com.github.vinnyda23;
 import java.util.Scanner;
 
 public class Opcao1{
-    public static void cadastroVeiculo() {
+    public static void cadastroVeiculo(Garagem garagem) {
 
         //ativa o Scanner
         Scanner sc = new Scanner(System.in);
-        //Chama a class Garagem para Opcao1,cadastrarVeiculo
-        Garagem garagem = new Garagem();
+
 
         System.out.println("Cadastro de Veiculo");
 

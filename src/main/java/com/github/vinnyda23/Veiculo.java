@@ -7,6 +7,17 @@ public class Veiculo {
     private String ano;
     private String cor;
     private double valor;
+    private boolean disponivel = true;
+
+    public Veiculo(String categoria, String modelo, String marca, String ano, String cor, double valor) {
+        this.categoria = categoria;
+        this.modelo = modelo;
+        this.marca = marca;
+        this.ano = ano;
+        this.cor = cor;
+        this.valor = valor;
+        this.disponivel = true;
+    }
 
     public String getCategoria() {
         return categoria;
@@ -55,13 +66,11 @@ public class Veiculo {
     public void setValor(double valor) {
         this.valor = valor;
     }
+    public boolean isDisponivel() {
+        return disponivel;
+    }
 
-    public Veiculo(String categoria, String modelo, String marca, String ano, String cor, double valor) {
-        this.categoria = categoria;
-        this.modelo = modelo;
-        this.marca = marca;
-        this.ano = ano;
-        this.cor = cor;
-        this.valor = valor;
+    public void setDisponivel(boolean disponivel) {
+        this.disponivel = disponivel;
     }
 }

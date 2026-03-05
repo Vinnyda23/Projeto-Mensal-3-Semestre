@@ -3,11 +3,10 @@ package com.github.vinnyda23;
 import java.util.Scanner;
 
 public class Opcao3 {
-    public static void buscarVeiculos() {
+    public static void buscarVeiculos(Garagem garagem) {
 
         Scanner sc = new Scanner(System.in);
 
-        Garagem garagem = new Garagem();
 
         System.out.println("informe o modelo do veiculo que esta buscando");
         String modelo = sc.nextLine();//lê toda a linha de entrada
