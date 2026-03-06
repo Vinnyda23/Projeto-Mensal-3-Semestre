@@ -8,7 +8,9 @@ public class Opcao2 {
 
         Scanner sc = new Scanner(System.in);
 
-        System.out.println("Lista de Veiculos");
+        System.out.println("|-----------------------|");
+        System.out.println("|-- Lista de Veiculos --|");
+        System.out.println("|-----------------------|");
         garagem.listarVeiculos();//lê toda a linha de entrada
     }
 }

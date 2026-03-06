@@ -36,13 +36,12 @@ public class Garagem {
 
     public void removerVeiculos(String modelo) {
         veiculos.removeIf(v -> v.getModelo().equalsIgnoreCase(modelo));
-        System.out.println("Veiculo Removido");
     }
 
     // onde buscaremos pelo modelo do veiculo
     public Veiculo buscarPorModelo(String modelo) {
         for (Veiculo v : veiculos) {
-            if (v.getModelo().equalsIgnoreCase(modelo)) {
+            if (modelo.equalsIgnoreCase(v.getModelo())) {
                 return v;
             }
         }

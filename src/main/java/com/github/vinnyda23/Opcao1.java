@@ -1,4 +1,5 @@
 package com.github.vinnyda23;
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class Opcao1{
@@ -6,7 +7,7 @@ public class Opcao1{
 
         //ativa o Scanner
         Scanner sc = new Scanner(System.in);
-
+    try {
 
         System.out.println("Cadastro de Veiculo");
 
@@ -32,7 +33,14 @@ public class Opcao1{
 
         Veiculo v = new Veiculo(categoria, modelo, marca, ano, cor, valor);
         garagem.adicionarVeiculos(v);
-
+    }catch(InputMismatchException e){
+        System.out.println("|--------------------------------------|");
+        System.out.println("|-    ⚠ Erro Casdastro de veiculo ⚠   -|");
+        System.out.println("|-    Carater especial nao e valido   -|");
+    }finally{
+        System.out.println("|-      Finalizando sistema...        -|");
+        System.out.println("|--------------------------------------|");
+    }
 
     }
 

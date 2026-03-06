@@ -1,4 +1,5 @@
 package com.github.vinnyda23;
+import java.util.ArrayList;
 import java.util.Scanner;
 
 
@@ -7,6 +8,7 @@ public class Opcao4 {
 
         Scanner sc = new Scanner(System.in);
 
+        garagem.listarVeiculos();
         System.out.println("Digite modelo para comprar:");
         String modelo = sc.nextLine();
 

@@ -1,8 +1,6 @@
 package com.github.vinnyda23;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Scanner;
+import java.util.*;
 
 public class Main {
     public static void main(String[] args) {
@@ -10,26 +8,17 @@ public class Main {
         SistemaUsuarios sistemaUsuarios = new SistemaUsuarios();
 
         // Login e senha  ADMIN
-        sistemaUsuarios.cadastrarUsuario(new ArrayList<Usuario>(Arrays.asList(new Usuario(
-                        "Admin",          // login
-                        "123",            // senha
-                        "CPD",    // endereco
-                        "admin",// email
-                        "CPD",       // telefone
-                        "ADMIN"           // tipo
-                ),
-                new Usuario(
-                        "Cliente",
-                        "cliente",
-                        "Empresa Garagem Simas turbo",
-                        "Cliente",
-                        "99877261",
-                        "Cliente"
-                )))
+        sistemaUsuarios.cadastrarUsuario(new ArrayList<Usuario>(Arrays.asList(new Usuario("Admin", "123", "CPD", "admin", "CPD", "ADMIN"),
+                new Usuario("Cliente", "cliente", "Empresa Garagem Simas turbo", "Cliente", "99877261", "CLIENTE")))
         );
+
 
         Usuario usuarioLogado = null;
         Garagem garagem = new Garagem();
+        garagem.adicionarVeiculos(new Veiculo("Popular Plus", "Corolla", "Toyota", "2020","preto",75000.99));
+        garagem.adicionarVeiculos(new Veiculo("Popular PLus", "Civic","Honda", "2019","branco",523412.312));
+        garagem.adicionarVeiculos(new Veiculo("Popular Plus", "Focus","Ford", "2018","azul escuro",178000.00));
+        garagem.adicionarVeiculos(new Veiculo("Luxo","Cayenne","Porsche","2026","vermelha",1740000.00));
         Scanner sc = new Scanner(System.in);
 
         int selection2 = 0;
@@ -37,40 +26,52 @@ public class Main {
 
 
         while(usuarioLogado == null) {
+            try {
 
-            System.out.println("==== LOGIN ====");
-            System.out.println("Email:");
-            String login = sc.nextLine();
+                System.out.println("==== LOGIN ====");
+                System.out.println("Email:");
+                String login = sc.nextLine();
 
-            System.out.println("Senha:");
-            String senha = sc.nextLine();
+                System.out.println("Senha:");
+                String senha = sc.nextLine();
 
-            usuarioLogado = sistemaUsuarios.login(login, senha);
+                usuarioLogado = sistemaUsuarios.login(login, senha);
 
-            if (usuarioLogado == null) {
-                System.out.println("Login nao registrado");
+                if (usuarioLogado == null) {
+                    System.out.println("Login nao registrado");
+                }
+            }catch (Exception e) {
+                System.out.println("Numero/Caracter Invalido");
+                sc.nextLine();
             }
         }
         while (selection2 != 6) {
-
-            //menu de possibilidades - Classe estatica
-            System.out.println("==== CONCESSEIONARIA ====");
-            System.out.println("1 - Cadastrar Veiculo");
-            System.out.println("2 - Listar Veiculos");
-            System.out.println("3 - Buscar Veiculos");
-            System.out.println("4 - Comprar veiculos");
-            System.out.println("5 - Remover Veiculos");
-            System.out.println("6 - Sair");
-            //menu encerramento para opcao da classe estatica
-            selection2 = sc.nextInt();
-            sc.nextLine();//serve para pimpar o buffer
+            try {
+                //menu de possibilidades - Classe estatica
+                System.out.println("==== CONCESSEIONARIA ====");
+                System.out.println("1 - Cadastrar Veiculo");
+                System.out.println("2 - Listar Veiculos");
+                System.out.println("3 - Buscar Veiculos");
+                System.out.println("4 - Comprar veiculos");
+                System.out.println("5 - Remover Veiculos");
+                System.out.println("6 - Sair");
+                //menu encerramento para opcao da classe estatica
+                selection2 = sc.nextInt();
+                sc.nextLine();//serve para pimpar o buffer
+            }catch(InputMismatchException e) {
+                System.out.println("|----------------------------------|");
+                System.out.println("|-- ⚠ Erro , Caracter invalido ⚠ --|");
+                sc.nextLine();
+            }
 
             switch (selection2) {
                 case 1:
                     if (usuarioLogado.getTipo().equals("ADMIN")) {
                         Opcao1.cadastroVeiculo(garagem);
                     } else {
-                        System.out.println("Apenas ADMIN pode cadastrar veículos.");
+                        System.out.println("|-------------------------------------------|");
+                        System.out.println("|-- Apenas ADMIN pode cadastrar veículos. --|");
+                        System.out.println("|-------------------------------------------|");
                     }
                     break;
                 case 2:
@@ -98,7 +99,10 @@ public class Main {
                     Opcao6.encerrar();
                     break;
                 default:
-                    System.out.println("Opcao Invalida");
+                    System.out.println("|--------------------------------|");
+                    System.out.println("|--      Numero Invalido⚠      --|");
+                    System.out.println("|-- ⚠ Use os numero de 1 a 6 ⚠ --|");
+                    System.out.println("|--------------------------------|");
                     break;
                 }
             }
